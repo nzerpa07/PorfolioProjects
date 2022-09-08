@@ -1,0 +1,37 @@
+-/*
+Sample_Superstore
+
+SKILLS USED Aggregate functions
+*/
+
+-- SELECT Data that we are going to be starting with --
+
+SELECT * 
+FROM sample_superstore;
+
+-- What product was ordered by each person --
+SELECT `Order ID`,`Customer Name`,`Product Name`,`Product ID`
+FROM sample_superstore;
+
+-- What Product has been loosing most profit --
+SELECT `Product ID`,`Product Name`,Profit
+FROM sample_superstore
+ORDER BY Profit ASC;
+
+-- What Prodcut has most profit --
+SELECT `Product ID`,`Product Name`,Profit
+FROM sample_superstore
+ORDER BY Profit DESC;
+
+-- 5 OF THE BEST SELLING PRODUCTS--
+SELECT `Product ID`, Sales, Profit
+FROM sample_superstore
+ORDER BY Profit DESC
+LIMIT 5;
+
+-- What Product Sells Most in Florida --
+SELECT State,`Product ID`,`Product Name`,Quantity,Sales,Profit
+FROM sample_superstore
+WHERE STATE='Florida'
+ORDER BY Sales DESC;
+
